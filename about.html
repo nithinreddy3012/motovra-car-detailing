@@ -1,0 +1,292 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Motovra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#111;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ff3c00;
+}
+
+.menu-wrapper{
+    position:relative;
+}
+
+.menu-dots{
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.dropdown{
+    position:absolute;
+    top:45px;
+    right:0;
+    background:#111;
+    border-radius:8px;
+    min-width:180px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    z-index:2000;
+}
+
+.dropdown a{
+    padding:12px 15px;
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid #222;
+}
+
+.dropdown a:hover{
+    background:#ff3c00;
+}
+
+/* HERO */
+.about-hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7') no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.about-hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.about-hero h1{
+    position:relative;
+    font-size:48px;
+    z-index:2;
+}
+
+/* CONTENT */
+.about-content{
+    padding:80px 80px;
+    text-align:center;
+}
+
+.about-content h2{
+    font-size:36px;
+    margin-bottom:20px;
+    color:#ff3c00;
+}
+
+.about-content p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+/* VALUES SECTION */
+.values{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:50px 60px;
+}
+
+.value-card{
+    background:#1a1a1a;
+    padding:30px;
+    width:280px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.value-card:hover{
+    transform:translateY(-8px);
+    background:#222;
+}
+
+.value-card h3{
+    margin-bottom:15px;
+    color:#ff3c00;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:20px;
+    text-align:center;
+    color:#aaa;
+}
+
+
+/* Desktop fix */
+@media (min-width: 1024px){
+    .services, .about-content {
+        padding: 100px 80px;
+    }
+}
+.navbar {
+    padding: 15px 20px;
+}
+
+@media (min-width: 1024px){
+    .navbar {
+        padding: 20px 60px;
+    }
+}
+.hero-text{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.hero-text p{
+    color:#ddd;
+    margin-top:10px;
+}
+.btn{
+    background:#ff3c00;
+    padding:12px 30px;
+    text-decoration:none;
+    color:#fff;
+    border-radius:6px;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:#e63300;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Motovra</div>
+
+    <nav>
+        <div class="menu-wrapper">
+            <span class="menu-dots" id="menuBtn">⋮</span>
+
+            <div class="dropdown" id="dropdownMenu">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Book Now</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <div class="hero-text">
+  <h1>About Motovra</h1>
+  <p>Passion-driven detailing that brings your car back to life</p>
+</div>
+</section>
+
+<section class="about-content">
+    <h2>Driven by Passion. Defined by Perfection.</h2>
+    <p>
+        At Motovra, we believe every vehicle deserves more than just a wash — 
+        it deserves precision, protection, and perfection. 
+        Our professional detailing services are designed to restore, enhance, 
+        and protect your vehicle with industry-grade techniques and premium products.
+    </p>
+
+    <p>
+        From basic detailing to advanced ceramic coating, 
+        we treat every car like it's our own. 
+        Our mission is to deliver showroom-level shine and long-lasting protection.
+    </p>
+</section>
+
+<section class="values">
+    <div class="value-card">
+<h3>⭐ Quality First</h3>    
+    <p>We use only premium products and professional tools.</p>
+    </div>
+
+    <div class="value-card">
+<h3>🎯 Precision Work</h3>
+        <p>Attention to detail is what sets us apart.</p>
+    </div>
+
+    <div class="value-card">
+<h3>🤝 Customer Trust</h3>        <p>Your satisfaction is our top priority.</p>
+    </div>
+</section>
+
+<section style="text-align:center; padding:60px;">
+  <h2>Ready to Experience the Difference?</h2>
+  <p style="color:#ccc; margin:10px 0 20px;">
+    Book your detailing service today
+  </p>
+
+  <a href="booking.html" class="btn">🚗 Book Now</a>
+</section>
+
+<section style="text-align:center; padding:60px;">
+  <h2>Why Customers Trust Us</h2>
+
+  <p style="color:#ccc; max-width:700px; margin:auto;">
+    We combine professional tools, premium products, and attention to detail 
+    to deliver results that exceed expectations. Every vehicle is treated with care, 
+    ensuring a finish that lasts.
+  </p>
+</section>
+
+<footer>
+    © 2026 Motovra. All Rights Reserved.
+</footer>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const dropdown = document.getElementById("dropdownMenu");
+
+menuBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    dropdown.style.display =
+        dropdown.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", function() {
+    dropdown.style.display = "none";
+});
+</script>
+</body>
+</html>

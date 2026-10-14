@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motovra | Premium Car Detailing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#111;
+color: #fff;}
+
+/* HEADER MUST HAVE HIGH Z-INDEX */
+header{
+    position:relative;
+    z-index:1000;   /* makes header above hero */
+}
+
+/* NAVBAR */
+.navbar{
+    position:absolute;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#111;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ff3c00;  /*Brand Orange*/
+}
+
+/* MENU */
+.menu-wrapper{
+    position:relative;
+}
+
+.menu-dots{
+    font-size:30px;
+    color:#fff;  
+    cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:absolute;
+    top:45px;
+    right:0;
+    background:#111;
+    border-radius:8px;
+    min-width:180px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    z-index:2000;
+}
+
+.dropdown a{
+    padding:12px 15px;
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid #222;
+    transition:0.3s;
+}
+
+.dropdown a:last-child{
+    border-bottom:none;
+}
+
+.dropdown a:hover{
+    background:#ff3c00;
+}
+
+/* HERO SECTION */
+.hero{
+    position:relative;
+    height:100vh;
+background:url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9') no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+}
+
+.hero h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#ff3c00;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+.btn{
+    background:#ff3c00;
+    color:#fff;
+    padding:12px 25px;
+    border:none;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#e63300;
+}
+
+
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header{
+        padding:15px 20px;
+    }
+
+    .hero h2{
+        font-size:36px;
+    }
+}
+.services, .about-content {
+    padding: 80px 20px;
+}
+
+/* Desktop fix */
+@media (min-width: 1024px){
+    .services, .about-content {
+        padding: 100px 80px;
+    }
+}
+.navbar {
+    padding: 15px 20px;
+}
+
+@media (min-width: 1024px){
+    .navbar {
+        padding: 20px 60px;
+    }
+}
+.before-after{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.before-after h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.before-after p{
+    color:#aaa;
+    margin-bottom:40px;
+}
+
+/* CONTAINER */
+.ba-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* CARD */
+.ba-card{
+    background:#1a1a1a;
+    border-radius:12px;
+    overflow:hidden;
+    width:300px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    transition:0.3s;
+}
+
+.ba-card:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGE */
+.ba-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* LABEL */
+.ba-card span{
+    display:block;
+    padding:12px;
+    font-weight:600;
+    color:#ff3c00;
+}
+.faq{
+    text-align:center;
+    padding:60px 20px;
+}
+
+    .why{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.why-container{
+    display:flex;
+    justify-content:center;
+}
+
+.why-container-inner{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px;
+    max-width:500px;
+}
+
+.why-item{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:8px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">Motovra</div>
+
+    <nav>
+        <div class="menu-wrapper">
+            <span class="menu-dots" id="menuBtn">⋮</span>
+
+            <div class="dropdown" id="dropdownMenu">
+                 <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Book Now</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Premium <span>Car Detailing</span> Services</h2>
+        <p>Give your vehicle the shine it deserves with motovra.</p>
+        <a href="services.html" class="btn">Our Services</a>
+    </div>
+</section>
+
+
+<section class="why">
+  <h2>Why Choose Motovra?</h2>
+
+  <div class="why-container">
+    <div class="why-container-inner">
+
+      <div class="why-item">✔ Doorstep Service</div>
+      <div class="why-item">✔ Premium Products</div>
+      <div class="why-item">✔ Professional Detailing</div>
+      <div class="why-item">✔ Affordable Pricing</div>
+
+    </div>
+  </div>
+</section>
+
+<section class="before-after">
+  <h2>Before & After</h2>
+  <p>See the transformation</p>
+
+  <div class="ba-container">
+
+    <div class="ba-card">
+      <img src="images/exterior2.jpeg" alt="Before">
+    </div>
+
+    <div class="ba-card">
+      <img src="images/interior.jpeg" alt="After">
+    </div>
+
+    <div class="ba-card">
+      <img src="images/exterior.jpeg" alt="Before">
+    </div>
+
+    <div class="ba-card">
+      <img src="images/scratch.jpeg" alt="After">
+    </div>
+
+  </div>
+</section>
+
+<section style="padding:60px; text-align:center;">
+  <h2>What Our Customers Say</h2>
+
+  <p style="color:#ccc; max-width:600px; margin:auto;">
+    ⭐⭐⭐⭐⭐ "Car looks brand new. Amazing service!"  
+    <br><br>
+    ⭐⭐⭐⭐⭐ "Very professional and worth it."  
+  </p>
+</section>
+
+<section class="faq">
+  <h2>FAQs</h2>
+
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <h3>How long does service take?</h3>
+      <p>1–4 hours depending on package.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you come to home?</h3>
+      <p>Yes, we provide doorstep service.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section style="text-align:center; padding:60px;">
+    <h2>Have Questions?</h2>
+    <p style="color:#ccc; margin:10px 0 20px;">
+        Chat with us instantly on WhatsApp
+    </p>
+
+    <a href="https://wa.me/917892252551" class="btn">
+        💬 Chat on WhatsApp
+    </a>
+</section>
+
+<section style="text-align:center; padding:40px;">
+    <a href="booking.html" class="btn">
+        🚗 Book Your Service Now
+    </a>
+</section>
+
+
+<footer>
+    <p>© 2026 Motovra. All Rights Reserved.</p>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const dropdown = document.getElementById("dropdownMenu");
+
+menuBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    dropdown.style.display =
+        dropdown.style.display === "flex" ? "none" : "flex";
+});
+
+document.addEventListener("click", function() {
+    dropdown.style.display = "none";
+});
+</script>
+</body>
+</html>
